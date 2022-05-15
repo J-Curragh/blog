@@ -1,24 +1,29 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useEffect } from 'react';
 import './App.css';
+import usePosts from "./contexts/usePosts";
+import Posts from "./components/Posts/Posts";
+import Search from "./components/Search";
 
 function App() {
+  const navLinks = ['home', 'knowledge base', 'about'];
+  const { isLoading, posts, fetchPosts } = usePosts();
+
+  useEffect(() => {
+    fetchPosts();
+  }, [fetchPosts]);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="access-bar">
+        <h1 className="main-header">jcli</h1>
+        <span className="sep">|</span>
+        {navLinks.map(link => <span key={link} className="nav-link-title">{link}</span>)}
+      </div>
+      <main>
+        <Search />
+        <h1>ARTICLES</h1>
+        <Posts posts={posts} />
+      </main>
     </div>
   );
 }

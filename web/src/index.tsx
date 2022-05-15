@@ -1,15 +1,18 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
+import * as ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-import reportWebVitals from './reportWebVitals';
+import reportWebVitals from "./reportWebVitals";
+import {PostsProvider} from "./contexts/PostsCtxProviderComponent";
 
-const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
-);
-root.render(
+const root = document.getElementById('root')!;
+const container = ReactDOM.createRoot(root);
+
+container.render(
   <React.StrictMode>
-    <App />
+    <PostsProvider>
+      <App />
+    </PostsProvider>
   </React.StrictMode>
 );
 
