@@ -21,9 +21,16 @@ const PostPreview = ({ post }: Props) => {
     return `${content.substring(0, firstParagraphEndIndex)}...`;
   }
 
+  const formattedDate = (date: string) => {
+    return date.substring(0, date.indexOf('T'));
+  }
+
   return (
     <div className="post-preview-card-container">
       <div className="post-preview-card">
+        <div className="post-preview-date">
+          <a>{formattedDate(created)}</a>
+        </div>
         <div className="post-preview-title">
           <a>{title}</a>
         </div>
