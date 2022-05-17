@@ -1,0 +1,5 @@
+- [x] Basic endpoints (POST 1, GET 1, GET ALL)
+- [ ] Tests!
+- [ ] Basic frontend
+- [x] OAuth security
+- [ ] CSRF protection FE/BE
