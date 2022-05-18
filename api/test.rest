@@ -12,8 +12,11 @@ Content-Type: application/json
 Authorization: Bearer {{auth_token}}
 
 {
-  "title": "Installing i3",
-  "content": "i3 is lightweight window manager written in C."
+  "title": "Installing awesomeWM",
+  "content": "awesomeWM is lightweight window manager written in C.",
+  "topics": [
+    { "name": "FOSS" }, { "name":  "GNU+Linux" }
+  ]
 }
 
 ###

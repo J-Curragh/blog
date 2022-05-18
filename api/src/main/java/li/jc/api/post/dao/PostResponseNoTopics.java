@@ -5,7 +5,7 @@ import lombok.Getter;
 import java.time.Instant;
 
 /**
- * Object representing a JSON-serializable server response.
+ * Object representing a JSON-serializable server response, with no related topics.
  */
 @Getter
 @AllArgsConstructor

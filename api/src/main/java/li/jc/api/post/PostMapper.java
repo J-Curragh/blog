@@ -4,7 +4,6 @@ import li.jc.api.post.dao.PostDetails;
 import li.jc.api.post.dao.PostResponse;
 import li.jc.api.post.dao.PostResponseNoTopics;
 import li.jc.api.topic.TopicMapper;
-import li.jc.api.topic.dao.TopicResponse;
 import li.jc.api.topic.dao.TopicResponseNoPosts;
 
 import java.time.Instant;
