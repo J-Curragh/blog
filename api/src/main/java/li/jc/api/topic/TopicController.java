@@ -1,13 +1,13 @@
 package li.jc.api.topic;
 
-import org.hibernate.NonUniqueResultException;
+import li.jc.api.topic.dao.TopicDetails;
+import li.jc.api.topic.dao.TopicResponse;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
-import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:3000/")
@@ -32,12 +32,9 @@ class TopicController {
 
     @GetMapping
     List<TopicResponse> getAllTopics() {
-        final List<TopicResponse> topicResponses = new ArrayList<>();
         final List<Topic> topics = topicRepository.findAll();
 
-        topics.forEach(topic -> topicResponses.add(new TopicResponse(topic)));
-
-        return topicResponses;
+        return topics.stream().map(TopicMapper::convertToSerializableDAO).collect(Collectors.toList());
     }
 
     @GetMapping("/{id}")
@@ -45,7 +42,7 @@ class TopicController {
         Topic topic = topicRepository.findTopicById(id)
                 .orElseThrow(() -> new TopicNotFoundException("Topic with id " + id + "does not exist."));
 
-        return new TopicResponse(topic);
+        return TopicMapper.convertToSerializableDAO(topic);
     }
 
     @ResponseStatus
@@ -55,9 +52,10 @@ class TopicController {
             throw new TopicAlreadyExistsException("Topic with name '" + topicDetails.getName() + "' already exists.");
         }
 
-        Topic topic = new Topic(topicDetails.getName());
+        Topic topic = TopicMapper.convertToJPAEntity(topicDetails);
         this.topicRepository.save(topic);
-        return new TopicResponse(topic);
+
+        return TopicMapper.convertToSerializableDAO(topic);
     }
 
 

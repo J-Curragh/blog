@@ -8,8 +8,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+/**
+ * JPA Entity representing a record from the Topic Entity table in the Database.
+ */
 @Getter
-@Setter
 @Builder
 @Entity
 @ToString

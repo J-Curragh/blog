@@ -1,4 +1,4 @@
-package li.jc.api.topic;
+package li.jc.api.topic.dao;
 
 import lombok.Getter;
 

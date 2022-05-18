@@ -1,12 +1,13 @@
 package li.jc.api.post;
 
+import li.jc.api.post.dao.PostDetails;
+import li.jc.api.post.dao.PostResponse;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
-import java.time.Instant;
-import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:3000/")
@@ -34,12 +35,12 @@ public class PostController {
     @GetMapping
     List<PostResponse> getAllPosts() {
 
-        List<PostResponse> postResponses= new ArrayList<>();
         List<Post> posts = postRepository.findAll();
 
-        posts.forEach(post -> postResponses.add(new PostResponse(post)));
+        return posts.stream()
+                .map(PostMapper::convertToSerializableDAO)
+                .collect(Collectors.toList());
 
-        return postResponses;
     }
 
     @GetMapping("/{id}")
@@ -48,8 +49,7 @@ public class PostController {
                 () -> new PostNotFoundException("Post with ID " + id + " does not exist.")
         );
 
-        return new PostResponse(post);
-
+        return PostMapper.convertToSerializableDAO(post);
     }
 
     @ResponseStatus
@@ -59,9 +59,10 @@ public class PostController {
             throw new PostAlreadyExistsException("Post with title " + postDetails.getTitle() + " already exists.");
         }
 
-        Post post = new Post(postDetails.getTitle(), postDetails.getContent(), Instant.now());
+        Post post = PostMapper.convertToJPAEntity(postDetails);
         this.postRepository.save(post);
-        return new PostResponse(post);
+
+        return PostMapper.convertToSerializableDAO(post);
     }
 
 }

@@ -1,10 +1,27 @@
 package li.jc.api.post;
 
 import li.jc.api.topic.Topic;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.NonNull;
+import lombok.RequiredArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 import org.hibernate.Hibernate;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.Lob;
+import javax.persistence.ManyToMany;
+import javax.persistence.Table;
 import java.time.Instant;
 import java.util.LinkedHashSet;
 import java.util.Objects;
@@ -32,15 +49,15 @@ public class Post {
 
     @NonNull
     @Lob
-    @Column(name = "content", nullable = false)
     @ToString.Exclude
+    @Column(name = "content", nullable = false)
     private String content;
 
     @NonNull
     @Column(name = "created")
     private Instant created;
 
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(name = "post_topic",
             joinColumns = @JoinColumn(name = "post_id", referencedColumnName = "id"),
             inverseJoinColumns = @JoinColumn(name = "topic_id", referencedColumnName = "id"))
