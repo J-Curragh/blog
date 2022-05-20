@@ -14,5 +14,5 @@ import java.util.List;
 public class PostDetails {
     private final String title;
     private final String content;
-    private List<TopicDetails> topics;
+    private List<Integer> topics;
 }

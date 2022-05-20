@@ -8,9 +8,11 @@ import lombok.NoArgsConstructor;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import lombok.ToString;
+import org.hibernate.annotations.Fetch;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -41,7 +43,7 @@ public class Topic {
     @NonNull
     private String name;
 
-    @ManyToMany(mappedBy = "topics")
+    @ManyToMany(mappedBy = "topics", fetch = FetchType.EAGER)
     @ToString.Exclude
     private List<Post> posts = new ArrayList<>();
 
@@ -56,5 +58,10 @@ public class Topic {
     @Override
     public int hashCode() {
         return Objects.hash(id, name);
+    }
+
+    public Topic(final String name, final List<Post> posts) {
+        this.name = name;
+        this.posts = posts;
     }
 }

@@ -12,6 +12,9 @@ import org.springframework.security.oauth2.jwt.JwtDecoders;
 import org.springframework.security.oauth2.jwt.JwtValidators;
 import org.springframework.security.oauth2.jwt.NimbusJwtDecoder;
 import org.springframework.security.web.csrf.CookieCsrfTokenRepository;
+import org.springframework.web.cors.CorsConfiguration;
+import org.springframework.web.servlet.config.annotation.CorsRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @EnableWebSecurity
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
@@ -25,12 +28,11 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     public void configure(HttpSecurity auth) throws Exception {
         // Validate JWT token -- https://datatracker.ietf.org/doc/html/rfc7519#section-7.2
         // hasAuthority("SCOPE_create:posts")
-        auth.csrf().csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse())
-                .and().authorizeRequests()
+        auth.csrf().disable()
+                .authorizeRequests()
                     .anyRequest().permitAll()
-                    .and().cors()
+                    .and().cors().configurationSource(request -> new CorsConfiguration().applyPermitDefaultValues())
                     .and().oauth2ResourceServer().jwt();
-
     }
 
     @Bean

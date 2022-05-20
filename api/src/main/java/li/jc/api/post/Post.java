@@ -10,6 +10,8 @@ import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 import org.hibernate.Hibernate;
+import org.hibernate.annotations.Cascade;
+import org.hibernate.annotations.CascadeType;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -57,7 +59,8 @@ public class Post {
     @Column(name = "created")
     private Instant created;
 
-    @ManyToMany(fetch = FetchType.LAZY)
+    @ManyToMany(fetch = FetchType.EAGER)
+    @Cascade(value = CascadeType.ALL)
     @JoinTable(name = "post_topic",
             joinColumns = @JoinColumn(name = "post_id", referencedColumnName = "id"),
             inverseJoinColumns = @JoinColumn(name = "topic_id", referencedColumnName = "id"))
@@ -75,5 +78,18 @@ public class Post {
     @Override
     public int hashCode() {
         return Objects.hash(id, created);
+    }
+
+    public Post(
+            final String title,
+            final String content,
+            final Instant created,
+            final Set<Topic> topics
+    ) {
+        this.title = title;
+        this.content = content;
+        this.created = created;
+        this.topics = topics;
+
     }
 }

@@ -4,18 +4,27 @@ import li.jc.api.post.dao.PostDetails;
 import li.jc.api.post.dao.PostResponse;
 import li.jc.api.post.exceptions.PostAlreadyExistsException;
 import li.jc.api.post.exceptions.PostNotFoundException;
+import li.jc.api.topic.Topic;
+import li.jc.api.topic.TopicRepository;
+import li.jc.api.topic.exceptions.TopicNotFoundException;
 import org.springframework.stereotype.Service;
 
+import java.time.Instant;
+import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 @Service
 public class PostService {
 
     private final PostRepository postRepository;
+    private final TopicRepository topicRepository;
 
-    public PostService(final PostRepository postRepository) {
+    public PostService(final PostRepository postRepository, final TopicRepository topicRepository) {
         this.postRepository = postRepository;
+        this.topicRepository = topicRepository;
     }
 
     PostResponse createSinglePost(PostDetails postDetails) {
@@ -23,8 +32,24 @@ public class PostService {
             throw new PostAlreadyExistsException("Post with title " + postDetails.getTitle() + " already exists.");
         }
 
-        Post post = PostMapper.convertToJPAEntity(postDetails);
-        this.postRepository.save(post);
+        List<Integer> topicIDs = postDetails.getTopics();
+
+        Set<Topic> topics = new HashSet<>();
+        for (Integer topicID : topicIDs) {
+            Topic topic = topicRepository.findTopicById(topicID).orElseThrow(
+                    () -> new TopicNotFoundException("Topic with ID " + topicID + " does not exist.")
+            );
+            topics.add(topic);
+        }
+
+        Post post = new Post(
+                postDetails.getTitle(),
+                postDetails.getContent(),
+                Instant.now(),
+                topics
+        );
+
+        postRepository.save(post);
 
         return PostMapper.convertToSerializableDAO(post);
     }
@@ -43,5 +68,15 @@ public class PostService {
         return posts.stream()
                 .map(PostMapper::convertToSerializableDAO)
                 .collect(Collectors.toList());
+    }
+
+    public PostResponse deleteSinglePost(final int id) {
+        Post post = postRepository.getPostById(id).orElseThrow(
+                () -> new PostNotFoundException("Post with ID " + id + " not found.")
+        );
+
+        postRepository.delete(post);
+
+        return PostMapper.convertToSerializableDAO(post);
     }
 }
