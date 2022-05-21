@@ -1,0 +1,28 @@
+#absolute-footer {
+    display: flex;
+    position: sticky; /* I do not care about Internet Explorer. */
+    position: -webkit-sticky;
+    bottom: 0;
+    width: 100%;
+    height: 75px;
+    background-color: #2A2A2A;
+}
+
+#footer-social-container {
+    display: flex;
+    flex-flow: row nowrap;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 3vh;
+    padding-left: 3vh;
+}
+
+.badge-icon {
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+.badge-icon:hover {
+    background-color: #353535;
+}
