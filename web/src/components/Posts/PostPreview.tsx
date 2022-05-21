@@ -1,16 +1,17 @@
 import { Post } from "../../models";
 import './Posts.css';
+import TagsList from "../Tags/TagsList";
 
 interface Props {
   post: Post
-
 }
 
 const PostPreview = ({ post }: Props) => {
   const {
     title,
     content,
-    created
+    created,
+    topics
   } = post;
 
   const truncatedContent = (content: string) => {
@@ -28,8 +29,11 @@ const PostPreview = ({ post }: Props) => {
   return (
     <div className="post-preview-card-container">
       <div className="post-preview-card">
-        <div className="post-preview-date">
-          <a>{formattedDate(created)}</a>
+        <div className="post-preview-info">
+          <div className="post-preview-date">
+            <a>{formattedDate(created)}</a>
+          </div>
+          <TagsList tags={topics} />
         </div>
         <div className="post-preview-title">
           <a>{title}</a>

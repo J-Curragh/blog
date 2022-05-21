@@ -35,6 +35,28 @@
     color: #D9D9D9;
 }
 
+.post-preview-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.post-preview-tag-list {
+    display: flex;
+    flex-flow: row-reverse nowrap;
+    align-items: center;
+    font-size: small;
+}
+
+.post-preview-tag {
+    border-radius: 5px;
+    min-width: 20px;
+    height: 20px;
+    padding-left: 5px;
+    padding-right: 5px;
+    white-space: nowrap;
+}
+
 @media only screen and (min-width: 992px) {
     .posts-grid {
         column-gap: 5rem;
