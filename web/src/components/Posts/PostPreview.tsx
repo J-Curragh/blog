@@ -1,5 +1,6 @@
+import * as SC from "./style";
 import { Post } from "../../models";
-import './Posts.css';
+import Date from "./Date";
 import TagsList from "../Tags/TagsList";
 
 interface Props {
@@ -19,30 +20,21 @@ const PostPreview = ({ post }: Props) => {
     if (firstParagraphEndIndex === -1) {
       return content;
     }
-    return `${content.substring(0, firstParagraphEndIndex)}...`;
-  }
 
-  const formattedDate = (date: string) => {
-    return date.substring(0, date.indexOf('T'));
-  }
+    return `${content.substring(0, firstParagraphEndIndex)}...`;
+  };
 
   return (
-    <div className="post-preview-card-container">
-      <div className="post-preview-card">
-        <div className="post-preview-info">
-          <div className="post-preview-date">
-            <a>{formattedDate(created)}</a>
-          </div>
+    <SC.Container >
+      <SC.Card>
+        <SC.Line>
+          <Date date={created} />
           <TagsList tags={topics} />
-        </div>
-        <div className="post-preview-title">
-          <a>{title}</a>
-        </div>
-        <div className="post-preview-content">
-          <p>{truncatedContent(content)}</p>
-        </div>
-      </div>
-    </div>
+        </SC.Line>
+          <SC.Title>{title}</SC.Title>
+          <SC.Info>{truncatedContent(content)}</SC.Info>
+      </SC.Card>
+    </SC.Container>
   )
 }
 

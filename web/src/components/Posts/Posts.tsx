@@ -1,6 +1,6 @@
 import { Post } from "../../models";
+import { Grid } from "./style";
 import PostPreview from "./PostPreview";
-import './Posts.css';
 
 interface Props {
   posts: Post[]
@@ -8,9 +8,9 @@ interface Props {
 
 const Posts = ({ posts }: Props) => {
   return (
-    <div className="posts-grid">
+    <Grid>
       {posts?.map(p => <PostPreview post={p} key={p.id}/> )}
-    </div>
+    </Grid>
   )
 }
 

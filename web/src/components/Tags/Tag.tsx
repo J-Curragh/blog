@@ -1,4 +1,5 @@
 import {TagColours} from "../../constants/Colors";
+import { Box } from "./style";
 
 interface Props {
   x: number;
@@ -9,9 +10,9 @@ const Tag = ({ x, label}: Props)=> {
   const colour = TagColours[x % TagColours.length]
 
   return (
-    <div className="post-preview-tag" style={{borderColor: colour.value, backgroundColor: colour.value}}>
+    <Box colour={colour.value}>
       {label}
-    </div>
+    </Box>
   )
 }
 export default Tag;

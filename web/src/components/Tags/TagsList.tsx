@@ -1,3 +1,4 @@
+import { Container } from "./style";
 import { Topic } from "../../models";
 import Tag from "./Tag";
 
@@ -7,9 +8,9 @@ interface Props {
 const TagsList = ({ tags }: Props) => {
 
   return (
-    <div className="post-preview-tag-list">
+    <Container>
       {tags.map(t => <Tag key={t.id} x={t.id} label={t.name} />)}
-    </div>
+    </Container>
   )
 
 };

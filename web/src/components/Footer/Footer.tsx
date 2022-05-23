@@ -1,23 +1,20 @@
-import './Footer.css'
+import * as SC from "./style";
 import Badge from "./Badge";
 import ThemeSelector from "./ThemeSelector";
 
 const Footer = () => {
   return (
-    <footer id="absolute-footer">
-
-      <div id="footer-social-container">
-        <div>
-          <ThemeSelector />
-        </div>
+    <SC.FooterBox>
+      <SC.Container>
+        <ThemeSelector />
         <div>
           <Badge imageName="Github" />
           <Badge imageName="Twitter" />
           <Badge imageName="Discord" />
         </div>
-      </div>
-    </footer>
-  )
+      </SC.Container>
+    </SC.FooterBox>
+  );
 }
 
 export default Footer;

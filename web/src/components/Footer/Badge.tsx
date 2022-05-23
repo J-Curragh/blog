@@ -1,3 +1,4 @@
+import { Icon } from './style';
 import { Socials } from "../../constants/Socials";
 
 interface Props {
@@ -7,10 +8,10 @@ interface Props {
 const Badge = ({ imageName }: Props) => {
 
   return (
-    <a className="badge-icon" href={Socials[imageName]}>
-      <img width="35" height="35" src={`/assets/${imageName}.svg`} alt={imageName} />
-    </a>
-  )
+    <Icon href={Socials[imageName]}>
+      <img width={35} height={35} src={`/assets/${imageName}.svg`} alt={imageName} />
+    </Icon>
+  );
 
 }
 
