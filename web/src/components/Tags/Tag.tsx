@@ -1,18 +1,13 @@
-import {TagColours} from "../../constants/Colors";
-import { Box } from "./style";
+import { TagColours } from '../../constants/Colors';
+import { Box } from './style';
 
 interface Props {
   x: number;
-  label: string
+  label: string;
 }
-const Tag = ({ x, label}: Props)=> {
+const Tag = ({ x, label }: Props) => {
+  const colour = TagColours[x % TagColours.length];
 
-  const colour = TagColours[x % TagColours.length]
-
-  return (
-    <Box colour={colour.value}>
-      {label}
-    </Box>
-  )
-}
+  return <Box colour={colour.value}>{label}</Box>;
+};
 export default Tag;

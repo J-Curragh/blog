@@ -1,16 +1,10 @@
-import { useCallback } from "react";
-import PostsService from "../services/postsService";
-import { Post } from "../models";
-import { usePostsContext } from "./PostsCtxProviderComponent";
+import { useCallback } from 'react';
+import PostsService from '../services/postsService';
+import { Post } from '../models';
+import { usePostsContext } from './PostsCtxProviderComponent';
 
 const usePosts = () => {
-
-  const {
-    isLoading,
-    setIsLoading,
-    posts,
-    setPosts
-  } = usePostsContext();
+  const { isLoading, setIsLoading, posts, setPosts } = usePostsContext();
 
   const fetchPosts = useCallback(() => {
     PostsService.getPosts().then((posts: Post[]) => {
@@ -21,8 +15,8 @@ const usePosts = () => {
   return {
     isLoading,
     fetchPosts,
-    posts
-  }
-}
+    posts,
+  };
+};
 
 export default usePosts;

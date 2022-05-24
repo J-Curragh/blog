@@ -1,10 +1,12 @@
 import React, { useEffect } from 'react';
-import usePosts from "../../contexts/usePosts";
-import Posts from "../Posts/Posts";
-import Search from "../Search";
-import Footer from "../Footer/Footer";
+
+import usePosts from '../../contexts/usePosts';
+
 import * as SC from './style';
-import Navbar from "../Navbar/Navbar";
+import Posts from '../Posts/Posts';
+import Search from '../Search';
+import Footer from '../Footer/Footer';
+import Navbar from '../Navbar/Navbar';
 
 function App() {
   const navLinks = ['home', 'knowledge base', 'about'];
@@ -28,7 +30,7 @@ function App() {
       </SC.Screen>
       <Footer />
     </SC.Wrapper>
-);
+  );
 }
 
 export default App;

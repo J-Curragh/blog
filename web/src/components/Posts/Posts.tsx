@@ -1,17 +1,19 @@
-import { Post } from "../../models";
-import { Grid } from "./style";
-import PostPreview from "./PostPreview";
+import { Post } from '../../models';
+import { Grid } from './style';
+import PostPreview from './PostPreview';
 
 interface Props {
-  posts: Post[]
+  posts: Post[];
 }
 
 const Posts = ({ posts }: Props) => {
   return (
     <Grid>
-      {posts?.map(p => <PostPreview post={p} key={p.id}/> )}
+      {posts?.map((p) => (
+        <PostPreview post={p} key={p.id} />
+      ))}
     </Grid>
-  )
-}
+  );
+};
 
 export default Posts;

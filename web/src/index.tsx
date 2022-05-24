@@ -1,18 +1,26 @@
 import React from 'react';
 import * as ReactDOM from 'react-dom/client';
+
 import './index.css';
 import App from './components/App/App';
-import reportWebVitals from "./reportWebVitals";
-import {PostsProvider} from "./contexts/PostsCtxProviderComponent";
+import reportWebVitals from './reportWebVitals';
+import { PostsProvider } from './contexts/PostsCtxProviderComponent';
+import { ThemeProvider } from 'styled-components';
+import { ThemeColour, ThemeColours } from './constants/Colors';
+
+// const theme: ThemeColour = ThemeColours["Rose Pine Light"]
+const theme: ThemeColour = ThemeColours['Seafoam Dark'];
 
 const root = document.getElementById('root')!;
 const container = ReactDOM.createRoot(root);
 
 container.render(
   <React.StrictMode>
-    <PostsProvider>
-      <App />
-    </PostsProvider>
+    <ThemeProvider theme={theme}>
+      <PostsProvider>
+        <App />
+      </PostsProvider>
+    </ThemeProvider>
   </React.StrictMode>
 );
 

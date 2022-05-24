@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.div`
-  background-color: #353535;
-  color: white;
+  background-color: ${(props) => props.theme.Base.value};
+  color: ${(props) => props.theme.PrimaryText.value};
   display: flex;
   flex-direction: column;
   font-size: 1rem;
@@ -14,13 +14,13 @@ export const Screen = styled.div`
 `;
 
 export const Row = styled.div`
+  align-items: center;
+  background-color: ${(props) => props.theme.Emphasis.value};
   display: flex;
-  min-width: 100%;
   flex-direction: row;
   justify-content: flex-start;
-  align-items: center;
-  background-color: #3c6e71;
   margin-bottom: 5vh;
+  min-width: 100%;
 `;
 
 export const Container = styled.main`
@@ -43,7 +43,7 @@ export const Container = styled.main`
     margin-bottom: 0;
     text-transform: uppercase;
   }
-  
+
   @media only screen and (min-width: 768px) {
     main {
       padding-left: 6rem;

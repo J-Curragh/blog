@@ -1,5 +1,5 @@
-import { Post } from "../models";
-import {createContext, FC, ReactNode, useContext, useState} from "react";
+import { Post } from '../models';
+import { createContext, FC, ReactNode, useContext, useState } from 'react';
 
 interface PostsContextInterface {
   isLoading: boolean;
@@ -8,7 +8,9 @@ interface PostsContextInterface {
   setPosts(posts: Post[]): void;
 }
 
-const PostsContext = createContext<PostsContextInterface | undefined>(undefined);
+const PostsContext = createContext<PostsContextInterface | undefined>(
+  undefined
+);
 
 const usePostsContext = (): PostsContextInterface => {
   const ctx = useContext(PostsContext);
@@ -27,16 +29,18 @@ interface ProviderProps {
 
 const PostsProvider = ({ children }: ProviderProps) => {
   const [isLoading, setIsLoading] = useState(false);
-  const [posts, setPosts] = useState<Post[]>([])
+  const [posts, setPosts] = useState<Post[]>([]);
 
   const value: PostsContextInterface = {
     isLoading,
     setIsLoading,
     posts,
-    setPosts
-  }
+    setPosts,
+  };
 
-  return <PostsContext.Provider value={value}>{children}</PostsContext.Provider>;
+  return (
+    <PostsContext.Provider value={value}>{children}</PostsContext.Provider>
+  );
 };
 
 export { PostsProvider, usePostsContext };

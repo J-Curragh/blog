@@ -1,12 +1,12 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 interface Props {
   colour: string;
 }
 
 export const Box = styled.div<Props>`
-  background-color: ${props => props.colour || "#D3D3D3"};
-  border-color: ${props => props.colour || "#D3D3D3"};
+  background-color: ${(props) => props.colour || '#D3D3D3'};
+  border-color: ${(props) => props.colour || '#D3D3D3'};
   border-radius: 5px;
   height: 20px;
   min-width: 20px;

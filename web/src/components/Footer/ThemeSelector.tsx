@@ -1,14 +1,19 @@
-import {ThemeColours} from "../../constants/Colors";
+import { ThemeColours } from '../../constants/Colors';
+import { Selector } from './style';
 
 const ThemeSelector = () => {
   return (
-    <div>
+    <Selector>
       <span>Select Theme:</span>
       <select>
-        {Object.keys(ThemeColours).map(theme => <option key={theme} value={theme}>{theme}</option>)}
+        {Object.keys(ThemeColours).map((theme) => (
+          <option key={theme} value={theme}>
+            {theme}
+          </option>
+        ))}
       </select>
-    </div>
-  )
-}
+    </Selector>
+  );
+};
 
 export default ThemeSelector;

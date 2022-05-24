@@ -1,6 +1,6 @@
-import * as SC from "./style";
-import Badge from "./Badge";
-import ThemeSelector from "./ThemeSelector";
+import * as SC from './style';
+import Badge from './Badge';
+import ThemeSelector from './ThemeSelector';
 
 const Footer = () => {
   return (
@@ -15,6 +15,6 @@ const Footer = () => {
       </SC.Container>
     </SC.FooterBox>
   );
-}
+};
 
 export default Footer;
