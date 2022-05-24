@@ -16,5 +16,5 @@ export const Logo = styled.h1`
 export const NavLink = styled.span`
   margin-right: 2em;
   font-size: medium;
-  color: antiquewhite;
+  color: ${(props) => props.theme.PrimaryText.value};
 `;
