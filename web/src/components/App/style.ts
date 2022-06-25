@@ -1,53 +1,36 @@
 import styled from 'styled-components';
 
-export const Wrapper = styled.div`
-  background-color: ${(props) => props.theme.Base.value};
-  color: ${(props) => props.theme.PrimaryText.value};
-  display: flex;
-  flex-direction: column;
-  font-size: 1rem;
+interface ScreenProps {
+  children: JSX.Element | JSX.Element[];
+}
+
+export const Screen = styled.div<ScreenProps>`
+  background-color: ${props => props.theme.Base.value};
+  min-height: 100vh;
+`;
+
+export const Fill = styled.main`
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 64rem;
+  min-height: calc(100vh - 88px - 52px);
+  padding-top: .5rem;
+  padding-bottom: .5rem;
+  
+`;
+
+export const NavLinkStyled = styled.a`
+  color: ${props => props.theme.PrimaryText.value};
+  font-size: 1.25rem;
+  font-weight: bold;
+  line-height: 1.75rem;
+  padding: 1px;
   text-align: center;
-`;
+  text-decoration: none;
 
-export const Screen = styled.div`
-  min-height: calc(100vh - 75px);
-`;
-
-export const Row = styled.div`
-  align-items: center;
-  background-color: ${(props) => props.theme.Emphasis.value};
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  margin-bottom: 5vh;
-  min-width: 100%;
-`;
-
-export const Container = styled.main`
-  align-items: flex-start;
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-  flex-shrink: 1;
-  flex-basis: 0;
-  justify-content: flex-start;
-  margin: 4rem auto 1.75rem;
-  max-width: 1260px;
-  width: 100%;
-
-  h1 {
-    align-self: flex-start;
-    font-size: 1.25rem;
-    font-weight: 700;
-    line-height: 1.75rem;
-    margin-bottom: 0;
-    text-transform: uppercase;
-  }
-
-  @media only screen and (min-width: 768px) {
-    main {
-      padding-left: 6rem;
-      padding-right: 6rem;
-    }
+  &:hover {
+    text-decoration: underline;
+    text-decoration-thickness: 4px;
+    text-decoration-color: ${props => props.theme.Emphasis.value}
   }
 `;

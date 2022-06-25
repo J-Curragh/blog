@@ -1,5 +1,5 @@
+import { Post } from '../../types';
 import * as SC from './style';
-import { Post } from '../../models';
 import Date from './Date';
 import TagsList from '../Tags/TagsList';
 

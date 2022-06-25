@@ -1,5 +1,5 @@
-import { Post } from '../models';
 import { createContext, FC, ReactNode, useContext, useState } from 'react';
+import { Post } from '../types';
 
 interface PostsContextInterface {
   isLoading: boolean;

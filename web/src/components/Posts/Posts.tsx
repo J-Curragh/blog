@@ -1,4 +1,4 @@
-import { Post } from '../../models';
+import { Post } from '../../types';
 import { Grid } from './style';
 import PostPreview from './PostPreview';
 

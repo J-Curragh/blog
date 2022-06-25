@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { AllPostsResponse } from '../models';
+import { AllPostsResponse } from '../types';
 
 const getPosts = async () => {
   const response: AllPostsResponse = await axios.get(

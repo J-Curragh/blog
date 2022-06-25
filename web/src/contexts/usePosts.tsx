@@ -1,6 +1,6 @@
 import { useCallback } from 'react';
 import PostsService from '../services/postsService';
-import { Post } from '../models';
+import { Post } from '../types';
 import { usePostsContext } from './PostsCtxProviderComponent';
 
 const usePosts = () => {

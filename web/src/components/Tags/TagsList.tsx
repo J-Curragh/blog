@@ -1,5 +1,5 @@
+import { Topic } from '../../types';
 import { Container } from './style';
-import { Topic } from '../../models';
 import Tag from './Tag';
 
 interface Props {

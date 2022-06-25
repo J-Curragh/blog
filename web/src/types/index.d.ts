@@ -1,3 +1,8 @@
+export interface WindowSpec {
+  width: number;
+  height: number;
+}
+
 export interface Post {
   id: number;
   title: string;

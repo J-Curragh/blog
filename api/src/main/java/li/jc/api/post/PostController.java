@@ -26,7 +26,6 @@ public class PostController {
         this.postService = postService;
     }
 
-    @ResponseStatus
     @GetMapping
     List<PostResponse> getAllPosts() {
         return postService.getAllPosts();
