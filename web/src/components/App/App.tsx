@@ -1,20 +1,17 @@
 import React, { useEffect, useState } from 'react';
-
-import usePosts from '../../contexts/usePosts';
-
 import * as SC from './style';
-import Posts from '../Posts/Posts';
+import usePosts from '../../contexts/usePosts';
 import Search from '../Search';
+import Posts from '../Posts/Posts';
 import Footer from '../Footer/Footer';
 import Navbar from '../Navbar/Navbar';
-import { ThemeProvider } from 'styled-components';
-import { ThemeColours } from '../../constants/Colors';
-
 import ThemeContext from '../../contexts/ThemeContext';
+import { ThemeProvider } from 'styled-components';
+import { ThemeColour, ThemeColours } from '../../constants/Colors';
 
 function App() {
   const { isLoading, posts, fetchPosts } = usePosts();
-  const [currentTheme, setCurrentTheme] = useState(
+  const [currentTheme, setCurrentTheme] = useState<ThemeColour>(
     ThemeColours['Seafoam Dark']
   );
 

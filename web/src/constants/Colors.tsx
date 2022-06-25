@@ -41,4 +41,12 @@ export const ThemeColours: Record<string, ThemeColour> = {
     SubtitleText: { label: 'Manatee', value: '#9893A5' },
     Emphasis: { label: 'Rose Gold', value: '#B4637A' },
   },
+
+  'Rose Pine': {
+    Base: { label: 'Eerie Black', value: '#191724' },
+    Primary: { label: 'Ruddy Pink', value: '#EA9A97' },
+    PrimaryText: { label: 'Lavender', value: '#E0DEF4' },
+    SubtitleText: { label: 'Old Lavender', value: '#6E6A86' },
+    Emphasis: { label: 'Light Crimson', value: '#EB6F92' },
+  },
 };

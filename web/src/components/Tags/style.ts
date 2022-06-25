@@ -9,6 +9,7 @@ export const Box = styled.div<Props>`
   border-color: ${(props) => props.colour || '#D3D3D3'};
   border-radius: 5px;
   height: 20px;
+  margin-left: 4px;
   min-width: 20px;
   padding-left: 5px;
   padding-right: 5px;

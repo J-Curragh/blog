@@ -37,11 +37,15 @@ export const Info = styled.a`
   color: ${(props) => props.theme.SubtitleText.value};
 `;
 
-export const Title = styled(Info)`
+export const Title = styled.a`
   color: ${(props) => props.theme.PrimaryText.value};
   font-size: 1.5rem;
   font-weight: 700;
   line-height: 2rem;
   padding-top: 1rem;
   padding-bottom: 0.5rem;
+
+  ${Card}:hover & {
+    color: ${(props) => props.theme.Emphasis.value};
+  }
 `;
