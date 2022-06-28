@@ -29,8 +29,8 @@ export interface Themes {
   Summer: Colour[];
 }
 
-export interface Social {
-  Github: string;
-  Discord: string;
-  Twitter: string;
+export interface TSocial {
+  title: string;
+  uri: string;
 }
+

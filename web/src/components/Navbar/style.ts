@@ -7,7 +7,8 @@ export const Container = styled.div<ContainerProps>`
   margin-left: auto;
   margin-right: auto;
   max-width: 64rem;
-  padding: 2rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 `;
 
 export const Header = styled.nav`
