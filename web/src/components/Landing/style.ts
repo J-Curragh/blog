@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const SplitContainer = styled.div`
-  color: ${props => props.theme.PrimaryText.value};
+  color: ${props => props.theme.Text.value};
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
@@ -10,6 +10,10 @@ export const SplitContainer = styled.div`
 
   @media (min-width: 768px) {
     flex-direction: row;
+  }
+
+  h1 {
+    color: ${props => props.theme.Gold.value};
   }
 `;
 
@@ -39,7 +43,7 @@ export const RightColumn = styled(LeftColumn)`
 
 export const BadgeContainer = styled.a`
   align-items: center;
-  color: ${props => props.theme.SubtitleText.value};
+  color: ${props => props.theme.Subtle.value};
   display: flex;
   margin-top: .5em;
   margin-bottom: .5em;
@@ -52,7 +56,7 @@ export const BadgeContainer = styled.a`
 
   &:hover {
     text-decoration: underline;
-    text-decoration-color: ${props => props.theme.Emphasis.value};
+    text-decoration-color: ${props => props.theme.Iris.value};
     text-decoration-thickness: 3px;
   }
 `;

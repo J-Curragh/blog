@@ -1,13 +1,13 @@
 import styled from "styled-components";
 
 export const IntroContainer = styled.div`
-  background-color: ${props => props.theme.Primary.value};
+  background-color: ${props => props.theme.Pine.value};
   border-color: ${props => props.theme.Base.value};
   border-radius: 1.5rem; 
   border-width: 2px;
   border-style: solid;
   box-sizing: border-box;
-  color: ${props => props.theme.PrimaryText.value};
+  color: ${props => props.theme.Text.value};
   display: flex;
   flex-flow: row nowrap;
   margin-top: 1rem;
@@ -21,7 +21,6 @@ export const IntroContainer = styled.div`
   }
 
   p {
-    color: ${props => props.theme.SubtitleText.value};
     font-size: 1.2em;
     margin-top: .1em;
     margin-bottom: .15em;
@@ -42,7 +41,7 @@ export const Container = styled.div`
   border-width: 2px;
   border-style: solid;
   box-sizing: border-box;
-  color: ${props => props.theme.SubtitleText.value};
+  color: ${props => props.theme.Subtle.value};
   display: flex;
   flex-flow: column wrap;
   margin-left: .5rem;

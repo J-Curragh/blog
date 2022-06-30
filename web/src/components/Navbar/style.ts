@@ -27,10 +27,10 @@ export const Header = styled.nav`
     border-color: ${props => props.theme.Base.value};
     border-style: solid;
     box-shadow: none;
-    color: ${props => props.theme.PrimaryText.value};
+    color: ${props => props.theme.Subtle.value};
 
     &:hover {
-      color: ${props => props.theme.SubtitleText.value};
+      color: ${props => props.theme.Love.value};
     }
   }
 `;

@@ -25,10 +25,6 @@ export interface Colour {
   value: string;
 }
 
-export interface Themes {
-  Summer: Colour[];
-}
-
 export interface TSocial {
   title: string;
   uri: string;

@@ -8,7 +8,7 @@ interface ThemeProps {
 }
 
 const Theme = ({ children }: ThemeProps) => {
-  const [currentTheme, setCurrentTheme] = useState<ThemeColour>(ThemeColours['Seafoam Dark'])
+  const [currentTheme, setCurrentTheme] = useState<ThemeColour>(ThemeColours['Default'])
   return (
     <ThemeContext.Provider value={{ currentTheme, setCurrentTheme }}>
       <ThemeProvider theme={currentTheme}>

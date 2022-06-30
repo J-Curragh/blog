@@ -5,10 +5,20 @@ interface Colour {
 
 export interface ThemeColour {
   Base: Colour;
-  Primary: Colour;
-  PrimaryText: Colour;
-  SubtitleText: Colour;
-  Emphasis: Colour;
+  Surface: Colour;
+  Overlay: Colour;
+  Muted: Colour;
+  Subtle: Colour;
+  Text: Colour;
+  Love: Colour;
+  Gold: Colour;
+  Rose: Colour;
+  Pine: Colour;
+  Foam: Colour;
+  Iris: Colour;
+  HighlightLow: Colour;
+  HighlightMed: Colour;
+  HighlightHigh: Colour;
 }
 
 export const TagColours: Array<Colour> = [
@@ -16,7 +26,7 @@ export const TagColours: Array<Colour> = [
   { label: 'Tangelo', value: '#F3722C' },
   { label: 'Beer', value: '#F8961E' },
   { label: 'Mango', value: '#F9844A' },
-  { label: 'Maize', value: '#F9C74F' }, // Crayola """own""" this colour. I do not care.
+  { label: 'Maize', value: '#F9C74F' }, 
   { label: 'Pistachio', value: '#90BE6D' },
   { label: 'Zomp', value: '#43AA8B' },
   { label: 'Steel Teal', value: '#4D908E' },
@@ -25,28 +35,22 @@ export const TagColours: Array<Colour> = [
 ];
 
 export const ThemeColours: Record<string, ThemeColour> = {
-  'Seafoam Dark': {
-    Base: { label: 'Jet', value: '#353535' },
-    Primary: { label: 'Ming', value: '#3C6E71' },
-    PrimaryText: { label: 'White', value: '#FFFFFF' },
-    SubtitleText: { label: 'Light Silver', value: '#D9D9D9' },
-    Emphasis: { label: 'Police Blue', value: '#284B63' },
-  },
-
   // Join the Rose Pine movement! https://rosepinetheme.com/
-  'Rose Pine Light': {
-    Base: { label: 'Seashell', value: '#FAF4ED' },
-    Primary: { label: 'NY Pink', value: '#D7827E' },
-    PrimaryText: { label: 'Purple Navy', value: '#575379' },
-    SubtitleText: { label: 'Manatee', value: '#9893A5' },
-    Emphasis: { label: 'Rose Gold', value: '#B4637A' },
-  },
-
-  'Rose Pine': {
-    Base: { label: 'Eerie Black', value: '#191724' },
-    Primary: { label: 'Ruddy Pink', value: '#EA9A97' },
-    PrimaryText: { label: 'Lavender', value: '#E0DEF4' },
-    SubtitleText: { label: 'Old Lavender', value: '#6E6A86' },
-    Emphasis: { label: 'Light Crimson', value: '#EB6F92' },
-  },
+  "Default": {
+    Base: { label: 'Cinder', value: '#191724' },
+    Surface: { label: 'Steel Gray', value: '#1f1d2e' },
+    Overlay: { label: 'Light Steel Gray', value: '#26233A' },
+    Muted: { label: 'Storm Gray', value: '#6E6A86' },
+    Subtle: { label: 'Manatee', value: '#908CAA' },
+    Text: { label: 'Link Water', value: '#E0DEF4' },
+    Love: { label: 'Deep Blush', value: '#EB6F92' },
+    Gold: { label: 'Rajah', value: '#F6C177' },
+    Rose: { label: 'Shilo', value: '#EBBCBA'},
+    Pine: { label: 'Calypso', value: '#31748F' },
+    Foam: { label: 'Aqua Island', value: '#9CCFD8' },
+    Iris: { label: 'Biloba Flower', value: '#C4A7E7' },
+    HighlightLow: { label: 'Steel Gray Low', value: '#21202E' },
+    HighlightMed: { label: 'Gun Powder', value: '#403D52' },
+    HighlightHigh: { label: 'Scarpa Flow', value: '#524F67' },
+  }
 };

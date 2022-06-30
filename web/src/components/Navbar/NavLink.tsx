@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components';
 
 export const NavLink = styled.a`
-  color: ${props => props.theme.PrimaryText.value};
+  color: ${props => props.theme.Text.value};
   font-size: 1.25rem;
   font-weight: bold;
   line-height: 1.75rem;
@@ -13,7 +13,7 @@ export const NavLink = styled.a`
   &:hover {
     text-decoration: underline;
     text-decoration-thickness: 4px;
-    text-decoration-color: ${props => props.theme.Emphasis.value}
+    text-decoration-color: ${props => props.theme.Rose.value}
   }
 `;
 
