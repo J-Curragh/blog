@@ -29,7 +29,11 @@ public class PostController {
     @GetMapping
     List<PostResponse> getAllPosts() {
         return postService.getAllPosts();
+    }
 
+    @GetMapping(params="recent")
+    List<PostResponse> getRecentPosts() {
+        return postService.getRecentPosts();
     }
 
     @ResponseStatus

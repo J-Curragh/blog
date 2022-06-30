@@ -7,6 +7,9 @@ import li.jc.api.post.exceptions.PostNotFoundException;
 import li.jc.api.topic.Topic;
 import li.jc.api.topic.TopicRepository;
 import li.jc.api.topic.exceptions.TopicNotFoundException;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.time.Instant;
@@ -64,6 +67,19 @@ public class PostService {
 
     public List<PostResponse> getAllPosts() {
         List<Post> posts = postRepository.findAll();
+
+        return posts.stream()
+                .map(PostMapper::convertToSerializableDAO)
+                .collect(Collectors.toList());
+    }
+
+    public List<PostResponse> getRecentPosts() {
+        final int DEFAULT_SIZE_RECENT = 4;
+
+        final PageRequest pageReq = PageRequest.of(
+                0, DEFAULT_SIZE_RECENT, Sort.by("created").descending()
+        );
+        final Page<Post> posts = postRepository.findAll(pageReq);
 
         return posts.stream()
                 .map(PostMapper::convertToSerializableDAO)
