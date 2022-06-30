@@ -12,9 +12,16 @@ const usePosts = () => {
     });
   }, [setPosts]);
 
+  const fetchRecentPosts = useCallback(() => {
+    PostsService.getPosts(true).then((posts: Post[]) => {
+      setPosts(posts);
+    });
+  }, [setPosts])
+
   return {
     isLoading,
     fetchPosts,
+    fetchRecentPosts,
     posts,
   };
 };

@@ -9,11 +9,11 @@ import { Landing } from '../Landing/Landing';
 import { Socials } from '../../constants/Socials';
 
 function App() {
-  const { fetchPosts } = usePosts();
-
+  const { fetchRecentPosts, posts } = usePosts();
+  
   useEffect(() => {
-    fetchPosts();
-  }, [fetchPosts]);
+    fetchRecentPosts();
+  }, [fetchRecentPosts])
 
   return (
     <BrowserRouter>
