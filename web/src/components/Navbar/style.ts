@@ -4,11 +4,14 @@ interface ContainerProps {
   children: JSX.Element | JSX.Element[];
 }
 export const Container = styled.div<ContainerProps>`
+  box-sizing: border-box;
   margin-left: auto;
   margin-right: auto;
   max-width: 64rem;
   padding-top: 2rem;
   padding-bottom: 2rem;
+  padding-left: .5rem;
+  padding-right: .5rem;
 `;
 
 export const Header = styled.nav`
@@ -19,7 +22,6 @@ export const Header = styled.nav`
   @media (min-width: 768px) {
     flex-direction: row;	
     justify-content: space-between;
-    padding: 2px;
   }
 
   button {

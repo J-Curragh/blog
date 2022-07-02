@@ -7,5 +7,7 @@ export const Container = styled.main`
   max-width: 64rem;
   min-height: calc(100vh - 88px - 52px);
   padding-top: .5rem;
+  padding-left: .5rem;
+  padding-right: .5rem;
 `;
 
