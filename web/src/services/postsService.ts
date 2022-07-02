@@ -15,9 +15,6 @@ const getPosts = async (recent = false, page = 0, pageSize = 20) => {
     'http://localhost:8080/api/v1/posts'.concat(params)
   );
 
-  console.log(
-    'http://localhost:8080/api/v1/posts'.concat(params))
-
   return response.data || [];
 };
 
