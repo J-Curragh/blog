@@ -1,12 +1,13 @@
 import React from 'react';
-import usePosts from '../../contexts/usePosts';
+import * as S from './style';
+import { useWindowDimensions } from '../../contexts/useWindowDimensions';
 import { AboutIntro } from './About/AboutIntro';
-import { AboutMe } from './About/AboutMe';
 import Posts from './Posts/Posts';
 import { Social } from './Social/Social';
-import * as S from './style';
 
-export const Landing = (props : {}) => {
+export const Landing = () => {
+  const { width } = useWindowDimensions();
+
   return (
     <React.Fragment>
       <S.Row>
@@ -17,7 +18,9 @@ export const Landing = (props : {}) => {
           <Posts />
         </S.LeftColumn>
         <S.RightColumn>
-          <Social />
+          { width > 768 
+            ? <Social /> 
+            : <></>}
         </S.RightColumn>
       </S.SplitContainer>
     </React.Fragment>
