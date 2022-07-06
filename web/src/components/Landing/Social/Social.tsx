@@ -5,8 +5,8 @@ import { ReactComponent as Github } from './assets/Github.svg';
 import { ReactComponent as Spotify} from './assets/Spotify.svg';
 import { ReactComponent as Discord} from './assets/Discord.svg';
 import { ReactComponent as Twitter} from './assets/Twitter.svg';
-import { ReactComponent as League} from './assets/LGW.svg';
-// import { ReactComponent as Blog} from './assets/Blog.svg';
+// import { ReactComponent as League} from './assets/LGW.svg';
+import { ReactComponent as Blog} from './assets/Blog.svg';
 import { Badge } from '../Badge';
 import { Socials } from '../../../constants/Socials';
 import { Projects } from '../../../constants/Projects';
@@ -34,8 +34,8 @@ export const Social = (props: {}) => {
       </S.Section>
       <S.Section>
         <h1>Projects</h1>
-        <Badge href={Projects.LGW.uri} label={Projects.LGW.title}>
-          <League width={DEFAULT_WIDTH + 32} height={DEFAULT_HEIGHT + 32} />
+        <Badge href={Projects.Blog.uri} label={Projects.Blog.title}>
+          <Blog width={DEFAULT_WIDTH} height={DEFAULT_HEIGHT} /> 
         </Badge>
       </S.Section>
     </S.Container>
