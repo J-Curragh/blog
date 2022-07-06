@@ -6,10 +6,9 @@ import Navbar from '../Navbar/Navbar';
 import { NavLink } from '../Navbar/NavLink';
 import { Page } from '../Page/Page';
 import { Landing } from '../Landing/Landing';
-import { Socials } from '../../constants/Socials';
 
 function App() {
-  const { fetchRecentPosts, posts } = usePosts();
+  const { fetchRecentPosts } = usePosts();
   
   useEffect(() => {
     fetchRecentPosts();
@@ -19,7 +18,7 @@ function App() {
     <BrowserRouter>
       <S.Screen>
         <Navbar>
-          <NavLink href="#">Knowledge Base</NavLink>
+          <NavLink href="#">Blog</NavLink>
           <NavLink href="#">Projects</NavLink>
           <NavLink href="#">Contact</NavLink>
         </Navbar>
