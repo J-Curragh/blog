@@ -6,7 +6,7 @@ import { ReactComponent as Spotify} from './assets/Spotify.svg';
 import { ReactComponent as Discord} from './assets/Discord.svg';
 import { ReactComponent as Twitter} from './assets/Twitter.svg';
 import { ReactComponent as League} from './assets/LGW.svg';
-import { ReactComponent as Blog} from './assets/Blog.svg';
+// import { ReactComponent as Blog} from './assets/Blog.svg';
 import { Badge } from '../Badge';
 import { Socials } from '../../../constants/Socials';
 import { Projects } from '../../../constants/Projects';

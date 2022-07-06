@@ -1,12 +1,17 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import * as S from './style';
 import { Post } from '../../../types';
+
+import Tag from "./Tag";
+import { getTagColour } from "../../../utils";
+import ThemeContext from "../../../contexts/ThemeContext";
 
 interface PostPreviewProps {
   post: Post;
 }
 
 const PostPreview = ({ post }: PostPreviewProps) => {
+  const { currentTheme } = useContext(ThemeContext);
   // Get the first paragraph of the post's content.
   const preview = (text: string) => {
     const paragraphEndIndex = text.indexOf('\\n');
@@ -22,7 +27,12 @@ const PostPreview = ({ post }: PostPreviewProps) => {
   return (
     <S.PostBlock>
       <span>{formatDate(post.created)}</span>
-      <S.Title>{post.title}</S.Title>
+      <S.Title>
+        <h2>{post.title}</h2>
+        <S.TagsContainer>
+          {post.topics.map((topic) => <Tag topic={topic} colour={getTagColour(topic.id, currentTheme)} ></Tag>)}
+        </S.TagsContainer>
+      </S.Title>
       <S.PreviewBody>{preview(post.content)}</S.PreviewBody>
     </S.PostBlock>
   );

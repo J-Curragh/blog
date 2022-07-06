@@ -4,6 +4,7 @@
 
 import { ThemeColour, ThemeColours } from './constants/Colors';
 
+// TODO: Fix this
 export const getThemeName = (theme: ThemeColour) => {
   const availableThemes = Object.keys(ThemeColours);
   return availableThemes.find(
@@ -15,3 +16,14 @@ export const getThemeName = (theme: ThemeColour) => {
       ThemeColours[currentTheme].SubtitleText == theme.SubtitleText
   );
 };
+
+export const getTagColour = (x: number, theme: ThemeColour) => {
+  const tagColours = [
+        theme.Pine,
+        theme.Foam,
+        theme.Iris,
+        theme.Gold,
+        theme.Love,
+    ];
+    return tagColours[x % tagColours.length];
+}

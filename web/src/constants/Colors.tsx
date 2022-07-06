@@ -21,19 +21,6 @@ export interface ThemeColour {
   HighlightHigh: Colour;
 }
 
-export const TagColours: Array<Colour> = [
-  { label: 'Coral Red', value: '#F94144' },
-  { label: 'Tangelo', value: '#F3722C' },
-  { label: 'Beer', value: '#F8961E' },
-  { label: 'Mango', value: '#F9844A' },
-  { label: 'Maize', value: '#F9C74F' }, 
-  { label: 'Pistachio', value: '#90BE6D' },
-  { label: 'Zomp', value: '#43AA8B' },
-  { label: 'Steel Teal', value: '#4D908E' },
-  { label: 'UCLA Blue', value: '#577590' },
-  { label: 'Lapis Lazuli', value: '#277DA1' },
-];
-
 export const ThemeColours: Record<string, ThemeColour> = {
   // Join the Rose Pine movement! https://rosepinetheme.com/
   "Default": {
