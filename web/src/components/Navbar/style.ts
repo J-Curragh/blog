@@ -10,8 +10,8 @@ export const Container = styled.div<ContainerProps>`
   max-width: 64rem;
   padding-top: 2rem;
   padding-bottom: 2rem;
-  padding-left: .5rem;
-  padding-right: .5rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
 `;
 
 export const Header = styled.nav`
@@ -20,19 +20,19 @@ export const Header = styled.nav`
   width: 100%;
 
   @media (min-width: 768px) {
-    flex-direction: row;	
+    flex-direction: row;
     justify-content: space-between;
   }
 
   button {
-    background-color: ${props => props.theme.Base.value};
-    border-color: ${props => props.theme.Base.value};
+    background-color: ${(props) => props.theme.Base.value};
+    border-color: ${(props) => props.theme.Base.value};
     border-style: solid;
     box-shadow: none;
-    color: ${props => props.theme.Subtle.value};
+    color: ${(props) => props.theme.Subtle.value};
 
     &:hover {
-      color: ${props => props.theme.Love.value};
+      color: ${(props) => props.theme.Love.value};
     }
   }
 `;
@@ -50,6 +50,5 @@ export const NavbarRight = styled.div`
 
   @media (min-width: 768px) {
     flex-direction: row;
-	  
-  } 
+  }
 `;

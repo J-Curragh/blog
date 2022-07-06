@@ -2,7 +2,6 @@ import React from 'react';
 import * as S from './style';
 
 export const AboutMe = () => {
-
   return (
     <S.Container>
       <h1>🚀 Dev Log 🚀</h1>

@@ -16,7 +16,7 @@ const usePosts = () => {
     PostsService.getPosts(true).then((posts: Post[]) => {
       setPosts(posts);
     });
-  }, [setPosts])
+  }, [setPosts]);
 
   return {
     isLoading,

@@ -18,13 +18,13 @@ export const Title = styled.div`
   justify-content: space-between;
   h2 {
     margin: 0;
-    padding-top: .5em;
-    padding-bottom: .5em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
   }
 `;
 
 export const PreviewBody = styled.p`
-  color: ${props => props.theme.Subtle.value};
+  color: ${(props) => props.theme.Subtle.value};
   margin: 0;
 `;
 
@@ -40,5 +40,5 @@ export const defaultTagStyle: React.CSSProperties = {
   marginLeft: '4px',
   marginRight: '4px',
   width: 'auto',
-  whiteSpace: 'nowrap'
-}
+  whiteSpace: 'nowrap',
+};

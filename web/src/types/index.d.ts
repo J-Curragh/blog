@@ -29,4 +29,3 @@ export interface TSocial {
   title: string;
   uri: string;
 }
-

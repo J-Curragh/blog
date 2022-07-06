@@ -1,6 +1,6 @@
-import React from 'react'
+import React from 'react';
 
-import { Colour, Topic } from "../../../types"
+import { Colour, Topic } from '../../../types';
 import { defaultTagStyle } from './style';
 
 interface TagProps {
@@ -10,11 +10,10 @@ interface TagProps {
 
 const Tag = ({ topic, colour }: TagProps) => {
   return (
-    <div style={{...defaultTagStyle, backgroundColor: colour.value}}>
+    <div style={{ ...defaultTagStyle, backgroundColor: colour.value }}>
       <span>{topic.name}</span>
     </div>
-  )
-}
+  );
+};
 
 export default Tag;
-

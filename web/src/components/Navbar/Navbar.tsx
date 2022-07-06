@@ -15,10 +15,15 @@ const Navbar = ({ children }: NavbarProps) => {
   const toggleMenu = () => setIsOpen((b) => !b);
 
   // Show chevron icon on smaller devices
-  const showMenuButton = () => windowSpec.width < 768 ? <MenuIcon open={isOpen} onClick={toggleMenu}/> : <></>
+  const showMenuButton = () =>
+    windowSpec.width < 768 ? (
+      <MenuIcon open={isOpen} onClick={toggleMenu} />
+    ) : (
+      <></>
+    );
 
-  const showNavbarLinks = () => isOpen || windowSpec.width >= 768 ? children : <></>
- 
+  const showNavbarLinks = () =>
+    isOpen || windowSpec.width >= 768 ? children : <></>;
 
   return (
     <S.Container>
@@ -27,14 +32,10 @@ const Navbar = ({ children }: NavbarProps) => {
           <NavLink href="#">JCLI</NavLink>
           {showMenuButton()}
         </S.NavbarLeft>
-        <S.NavbarRight>
-          {showNavbarLinks()}
-        </S.NavbarRight>
+        <S.NavbarRight>{showNavbarLinks()}</S.NavbarRight>
       </S.Header>
-    </S.Container>  
-  )
-
-
+    </S.Container>
+  );
 };
 
 export default Navbar;

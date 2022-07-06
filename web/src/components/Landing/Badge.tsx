@@ -7,7 +7,7 @@ interface BadgeProps {
   label: string;
 }
 
-export const Badge = ({ children, href, label }: BadgeProps)=> {
+export const Badge = ({ children, href, label }: BadgeProps) => {
   return (
     <S.BadgeContainer href={href}>
       {children}

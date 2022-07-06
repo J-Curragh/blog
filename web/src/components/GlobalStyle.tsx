@@ -1,10 +1,10 @@
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
   html, body {
     min-height: 100%;
     min-width: 100%;
-    background-color: ${props => props.theme.Base.value}
+    background-color: ${(props) => props.theme.Base.value}
   }
   
   body {

@@ -17,12 +17,8 @@ export const Landing = () => {
         <S.LeftColumn>
           <Posts />
         </S.LeftColumn>
-        <S.RightColumn>
-          { width > 768 
-            ? <Social /> 
-            : <></>}
-        </S.RightColumn>
+        <S.RightColumn>{width > 768 ? <Social /> : <></>}</S.RightColumn>
       </S.SplitContainer>
     </React.Fragment>
-  )
-}
+  );
+};

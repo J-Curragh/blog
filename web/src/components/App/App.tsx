@@ -9,10 +9,10 @@ import { Landing } from '../Landing/Landing';
 
 function App() {
   const { fetchRecentPosts } = usePosts();
-  
+
   useEffect(() => {
     fetchRecentPosts();
-  }, [fetchRecentPosts])
+  }, [fetchRecentPosts]);
 
   return (
     <BrowserRouter>

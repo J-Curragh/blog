@@ -9,7 +9,6 @@ import GlobalStyle from './components/GlobalStyle';
 const root = document.getElementById('root')!;
 const container = ReactDOM.createRoot(root);
 
-
 container.render(
   <React.StrictMode>
     <PostsProvider>
@@ -20,4 +19,3 @@ container.render(
     </PostsProvider>
   </React.StrictMode>
 );
-

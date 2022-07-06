@@ -10,7 +10,6 @@ const getPosts = async (recent = false, page = 0, pageSize = 20) => {
     params = params.concat(`?page=${page}&limit=${pageSize}`);
   }
 
-
   const response: AllPostsResponse = await axios.get(
     'http://localhost:8080/api/v1/posts'.concat(params)
   );

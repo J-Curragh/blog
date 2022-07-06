@@ -4,10 +4,10 @@ import ThemeContext from '../../contexts/ThemeContext';
 
 interface MenuIconProps {
   open: boolean;
-  onClick: () => void; 
+  onClick: () => void;
 }
 const MenuIcon = ({ open, onClick }: MenuIconProps) => {
-  const { currentTheme } = useContext(ThemeContext); 
+  const { currentTheme } = useContext(ThemeContext);
 
   const closedChevronSVG = () => (
     <svg
@@ -43,7 +43,6 @@ const MenuIcon = ({ open, onClick }: MenuIconProps) => {
     <button type="button" onClick={onClick}>
       {open ? openChevronSVG() : closedChevronSVG()}
     </button>
-
   );
 };
 

@@ -19,11 +19,11 @@ export const getThemeName = (theme: ThemeColour) => {
 
 export const getTagColour = (x: number, theme: ThemeColour) => {
   const tagColours = [
-        theme.Pine,
-        theme.Foam,
-        theme.Iris,
-        theme.Gold,
-        theme.Love,
-    ];
-    return tagColours[x % tagColours.length];
-}
+    theme.Pine,
+    theme.Foam,
+    theme.Iris,
+    theme.Gold,
+    theme.Love,
+  ];
+  return tagColours[x % tagColours.length];
+};

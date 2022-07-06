@@ -6,8 +6,7 @@ const Footer = () => {
     <SC.FooterBox>
       <SC.Container>
         <ThemeSelector />
-        <div>
-        </div>
+        <div></div>
       </SC.Container>
     </SC.FooterBox>
   );

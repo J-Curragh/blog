@@ -5,7 +5,6 @@ interface ScreenProps {
 }
 
 export const Screen = styled.div<ScreenProps>`
-  background-color: ${props => props.theme.Base.value};
+  background-color: ${(props) => props.theme.Base.value};
   min-height: 100vh;
 `;
-
