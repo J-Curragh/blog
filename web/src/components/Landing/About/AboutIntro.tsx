@@ -15,7 +15,7 @@ const TextContent = () => (
   </div>
 );
 
-export const AboutIntro = (props: {}) => {
+export const AboutIntro = () => {
   return (
     <S.IntroContainer>
       <S.PaddedContainer>
